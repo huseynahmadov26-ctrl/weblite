@@ -1,0 +1,26 @@
+# Normalize all text files
+* text=auto
+
+# Explicitly declare text files to avoid CRLF/LF issues
+*.md text
+*.json text
+*.js text
+*.ts text
+*.tsx text
+*.css text
+*.html text
+*.yml text
+*.yaml text
+*.svg text
+*.sh text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
