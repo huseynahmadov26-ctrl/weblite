@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import {
   Sparkles,
   Smartphone,
@@ -53,13 +52,9 @@ export function WhyUs() {
         />
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-border/60 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((it, i) => (
-            <motion.div
+          {items.map((it) => (
+            <div
               key={it.t}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: i * 0.04 }}
               className="group relative bg-background p-7 hover:bg-surface transition-soft"
             >
               <it.icon className="h-5 w-5 text-primary transition-soft group-hover:scale-110" />
@@ -67,7 +62,7 @@ export function WhyUs() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 {it.d}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

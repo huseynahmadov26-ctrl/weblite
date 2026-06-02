@@ -13,10 +13,29 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    let raf = 0;
+    let last = window.scrollY > 12;
+    setScrolled(last);
+
+    const update = () => {
+      raf = 0;
+      const next = window.scrollY > 12;
+      if (next !== last) {
+        last = next;
+        setScrolled(next);
+      }
+    };
+
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+
     onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
@@ -33,7 +52,7 @@ export function Nav() {
         >
           <a href="#top" className="flex items-center gap-2 group">
             <span className="relative grid h-8 w-8 place-items-center rounded-xl bg-gradient-primary shadow-glow-sm">
-              <span className="absolute inset-0 rounded-xl bg-gradient-primary blur-md opacity-60 group-hover:opacity-90 transition-soft" />
+              <span className="absolute inset-0 rounded-xl bg-gradient-primary opacity-30 group-hover:opacity-50 transition-soft" />
               <span className="relative text-primary-foreground font-display text-lg leading-none">
                 W
               </span>

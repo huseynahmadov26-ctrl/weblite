@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import {
   Code2,
   Layout,
@@ -53,13 +52,9 @@ export function Services() {
         />
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <motion.div
+          {services.map((s) => (
+            <div
               key={s.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.05 }}
               className="group relative rounded-2xl bg-gradient-card border border-border/70 p-6 transition-soft hover:border-primary/40 hover:-translate-y-1"
             >
               <div
@@ -78,7 +73,7 @@ export function Services() {
                   {s.desc}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

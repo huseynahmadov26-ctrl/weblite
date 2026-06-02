@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { Quote } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
@@ -29,13 +28,9 @@ export function Testimonials() {
           title="Words from the people we work with"
         />
         <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {items.map((t, i) => (
-            <motion.figure
+          {items.map((t) => (
+            <figure
               key={t.n}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: i * 0.07 }}
               className="rounded-3xl glass p-7 flex flex-col gap-6"
             >
               <Quote className="h-6 w-6 text-primary" />
@@ -51,7 +46,7 @@ export function Testimonials() {
                   <div className="text-xs text-muted-foreground">{t.r}</div>
                 </div>
               </figcaption>
-            </motion.figure>
+            </figure>
           ))}
         </div>
       </div>

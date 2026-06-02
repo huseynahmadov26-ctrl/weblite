@@ -52,20 +52,26 @@ export function Contact() {
             <ContactCard
               icon={Mail}
               label="Email"
-              value="hello@weblite.studio"
-              href="mailto:hello@weblite.studio"
+              value="weblite280@gmail.com"
+              href="weblite280@gmail.com"
             />
             <ContactCard
               icon={MessageCircle}
-              label="WhatsApp"
-              value="+1 (555) 010-0420"
-              href="https://wa.me/15550100420"
+              label="WhatsApp / Phone - Huseyn Ahmadov"
+              value="+994 70 436 20 11"
+              href="https://wa.me/9940704362011"
+            />
+            <ContactCard
+              icon={MessageCircle}
+              label="WhatsApp / Phone - Omar Atakishiyev"
+              value="+994 55 997 40 17"
+              href="https://wa.me/9940559974017"
             />
             <ContactCard
               icon={Instagram}
               label="Instagram"
-              value="@weblite.studio"
-              href="https://instagram.com/weblite.studio"
+              value="@weblite.az"
+              href="https://instagram.com/weblite.az"
             />
           </div>
         </div>

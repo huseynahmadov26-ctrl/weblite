@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { SectionHeading } from "./SectionHeading";
 
 const steps = [
@@ -41,15 +40,8 @@ export function Process() {
         <div className="relative mt-16">
           <div className="absolute left-0 right-0 top-7 hidden md:block h-px bg-gradient-to-r from-transparent via-border to-transparent" />
           <div className="grid gap-8 md:grid-cols-5">
-            {steps.map((s, i) => (
-              <motion.div
-                key={s.n}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="relative"
-              >
+            {steps.map((s) => (
+              <div key={s.n} className="relative">
                 <div className="relative z-10 mx-auto md:mx-0 grid h-14 w-14 place-items-center rounded-full glass-strong ring-glow">
                   <span className="font-display text-lg text-gradient-red">
                     {s.n}
@@ -59,7 +51,7 @@ export function Process() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {s.d}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

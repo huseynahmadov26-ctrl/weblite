@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { Check } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
@@ -54,13 +53,9 @@ export function Pricing() {
         />
 
         <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {tiers.map((t, i) => (
-            <motion.div
+          {tiers.map((t) => (
+            <div
               key={t.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
               className={`relative rounded-3xl p-7 border transition-soft ${
                 t.featured
                   ? "border-primary/40 bg-gradient-card shadow-glow"
@@ -103,7 +98,7 @@ export function Pricing() {
               >
                 Choose {t.name}
               </a>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

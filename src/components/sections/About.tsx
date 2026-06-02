@@ -1,5 +1,3 @@
-import { motion } from "motion/react";
-
 export function About() {
   return (
     <section id="about" className="relative py-28">
@@ -26,14 +24,11 @@ export function About() {
             </p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="absolute -inset-6 rounded-[2rem] bg-gradient-primary opacity-25 blur-3xl" />
+          <div className="relative">
+            <div
+              className="absolute -inset-6 rounded-[2rem] bg-gradient-primary opacity-10"
+              aria-hidden
+            />
             <div className="relative grid grid-cols-2 gap-3">
               {[
                 { k: "Craft", v: "Design-led approach" },
@@ -49,7 +44,7 @@ export function About() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

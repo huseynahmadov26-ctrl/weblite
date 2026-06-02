@@ -58,7 +58,7 @@ export function Footer() {
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
                   href="mailto:hello@weblite.studio"
                 >
-                  <Mail className="h-4 w-4" /> hello@weblite.studio
+                  <Mail className="h-4 w-4" /> weblite280@gmail.com
                 </a>
               </li>
               <li>

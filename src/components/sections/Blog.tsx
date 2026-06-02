@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { SectionHeading } from "./SectionHeading";
 import { ArrowUpRight } from "lucide-react";
 
@@ -32,13 +31,9 @@ export function Blog() {
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading eyebrow="Journal" title="Notes from the studio" />
         <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {posts.map((p, i) => (
-            <motion.article
+          {posts.map((p) => (
+            <article
               key={p.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: i * 0.07 }}
               className="group relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-card transition-soft hover:border-primary/40 hover:-translate-y-1"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
@@ -64,7 +59,7 @@ export function Blog() {
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>

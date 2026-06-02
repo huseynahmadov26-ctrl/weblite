@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export function Hero() {
@@ -10,76 +9,50 @@ export function Hero() {
       {/* Background layers */}
       <div className="absolute inset-0 bg-hero-glow" aria-hidden />
       <div className="absolute inset-0 grid-bg" aria-hidden />
-      <motion.div
+      <div
         aria-hidden
-        className="absolute -top-32 left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full blur-3xl"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full opacity-70"
         style={{
           background:
             "radial-gradient(circle, oklch(0.68 0.22 18 / 0.45), transparent 60%)",
         }}
-        animate={{ scale: [1, 1.08, 1], opacity: [0.7, 1, 0.7] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
+      <div
         aria-hidden
-        className="absolute top-40 -left-20 h-72 w-72 rounded-full blur-3xl"
+        className="absolute top-40 -left-20 h-72 w-72 rounded-full opacity-70"
         style={{
           background:
             "radial-gradient(circle, oklch(0.65 0.22 25 / 0.35), transparent 70%)",
         }}
-        animate={{ y: [0, 20, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
+      <div
         aria-hidden
-        className="absolute top-60 -right-20 h-80 w-80 rounded-full blur-3xl"
+        className="absolute top-60 -right-20 h-80 w-80 rounded-full opacity-70"
         style={{
           background:
             "radial-gradient(circle, oklch(0.72 0.22 14 / 0.30), transparent 70%)",
         }}
-        animate={{ y: [0, -25, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="relative mx-auto max-w-5xl px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-xs text-muted-foreground"
-        >
+        <div className="inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-xs text-muted-foreground">
           <Sparkles className="h-3.5 w-3.5 text-primary" />
           Modern Websites for Modern Businesses
-        </motion.div>
+        </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 font-display text-5xl md:text-7xl lg:text-[5.25rem] leading-[1.02] text-gradient"
-        >
+        <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-[5.25rem] leading-[1.02] text-gradient">
           We Build Modern Websites <br className="hidden md:block" />
           That Help{" "}
           <em className="not-italic text-gradient-red">Businesses Grow</em>
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-muted-foreground"
-        >
+        <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-muted-foreground">
           Web Lite designs and develops fast, responsive and high-performance
           websites - crafted to make your brand feel premium from the very first
           scroll.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-9 flex flex-wrap items-center justify-center gap-3"
-        >
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <a
             href="#contact"
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow-sm hover:shadow-glow transition-soft"
@@ -93,17 +66,12 @@ export function Hero() {
           >
             Contact Us
           </a>
-        </motion.div>
+        </div>
 
         {/* Mock browser frame */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto mt-20 max-w-4xl"
-        >
+        <div className="relative mx-auto mt-20 max-w-4xl">
           <div
-            className="absolute -inset-x-10 -inset-y-6 rounded-[2rem] bg-gradient-primary opacity-30 blur-3xl"
+            className="absolute -inset-x-10 -inset-y-6 rounded-[2rem] bg-gradient-primary opacity-10"
             aria-hidden
           />
           <div className="relative glass-strong rounded-2xl p-3 shadow-elevated">
@@ -137,7 +105,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

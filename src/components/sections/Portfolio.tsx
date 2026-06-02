@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { SectionHeading } from "./SectionHeading";
 import { ArrowUpRight } from "lucide-react";
 
@@ -40,14 +39,10 @@ export function Portfolio() {
         />
 
         <div className="mt-14 grid gap-5 md:grid-cols-2">
-          {projects.map((p, i) => (
-            <motion.a
+          {projects.map((p) => (
+            <a
               key={p.title}
               href="#contact"
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: i * 0.06 }}
               className="group relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-card p-5 transition-soft hover:border-primary/40 hover:-translate-y-1"
             >
               <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
@@ -85,7 +80,7 @@ export function Portfolio() {
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
               </div>
-            </motion.a>
+            </a>
           ))}
         </div>
       </div>
