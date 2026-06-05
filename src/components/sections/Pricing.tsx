@@ -4,7 +4,7 @@ import { SectionHeading } from "./SectionHeading";
 const tiers = [
   {
     name: "Starter",
-    price: "$499",
+    price: "$260-499",
     desc: "A polished single-page presence for new ventures.",
     features: [
       "1-page modern site",
@@ -16,7 +16,7 @@ const tiers = [
   },
   {
     name: "Business",
-    price: "$1,499",
+    price: "$1,250-1,599",
     featured: true,
     desc: "A complete multi-page website for growing brands.",
     features: [

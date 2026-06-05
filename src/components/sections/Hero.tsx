@@ -14,7 +14,7 @@ export function Hero() {
         className="absolute -top-32 left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full opacity-70"
         style={{
           background:
-            "radial-gradient(circle, oklch(0.68 0.22 18 / 0.45), transparent 60%)",
+            "radial-gradient(circle, rgba(255, 40, 40, 0.45), transparent 60%)",
         }}
       />
       <div
@@ -22,7 +22,7 @@ export function Hero() {
         className="absolute top-40 -left-20 h-72 w-72 rounded-full opacity-70"
         style={{
           background:
-            "radial-gradient(circle, oklch(0.65 0.22 25 / 0.35), transparent 70%)",
+            "radial-gradient(circle, rgba(220, 35, 35, 0.35), transparent 70%)",
         }}
       />
       <div
@@ -30,7 +30,7 @@ export function Hero() {
         className="absolute top-60 -right-20 h-80 w-80 rounded-full opacity-70"
         style={{
           background:
-            "radial-gradient(circle, oklch(0.72 0.22 14 / 0.30), transparent 70%)",
+            "radial-gradient(circle, rgba(255, 10, 10, 0.30), transparent 70%)",
         }}
       />
 
@@ -68,44 +68,6 @@ export function Hero() {
           </a>
         </div>
 
-        {/* Mock browser frame */}
-        <div className="relative mx-auto mt-20 max-w-4xl">
-          <div
-            className="absolute -inset-x-10 -inset-y-6 rounded-[2rem] bg-gradient-primary opacity-10"
-            aria-hidden
-          />
-          <div className="relative glass-strong rounded-2xl p-3 shadow-elevated">
-            <div className="flex items-center gap-1.5 px-2 py-1.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
-              <span className="h-2.5 w-2.5 rounded-full bg-amber-500/60" />
-              <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/60" />
-              <span className="ml-3 text-[11px] text-muted-foreground">
-                weblite.studio
-              </span>
-            </div>
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-surface">
-              <div className="absolute inset-0 grid-bg opacity-60" />
-              <div className="absolute inset-0 bg-radial-glow" />
-              <div className="relative grid h-full grid-cols-3 gap-4 p-6">
-                <div className="col-span-2 space-y-3">
-                  <div className="h-3 w-32 rounded-full bg-foreground/15" />
-                  <div className="h-6 w-3/4 rounded-full bg-foreground/25" />
-                  <div className="h-6 w-2/3 rounded-full bg-foreground/15" />
-                  <div className="mt-6 flex gap-2">
-                    <div className="h-8 w-24 rounded-full bg-gradient-primary shadow-glow-sm" />
-                    <div className="h-8 w-24 rounded-full bg-foreground/10" />
-                  </div>
-                </div>
-                <div className="glass rounded-xl p-3 flex flex-col gap-2">
-                  <div className="h-2 w-12 rounded-full bg-primary/60" />
-                  <div className="h-2 w-20 rounded-full bg-foreground/15" />
-                  <div className="h-2 w-16 rounded-full bg-foreground/15" />
-                  <div className="mt-auto h-20 rounded-lg bg-gradient-primary/30" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

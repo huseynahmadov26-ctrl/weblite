@@ -126,9 +126,6 @@ function ContactCard({
       rel="noreferrer"
       className="group flex items-center gap-4 rounded-2xl glass p-5 transition-soft hover:bg-surface-elevated hover:-translate-y-0.5"
     >
-      <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow-sm">
-        <Icon className="h-5 w-5" />
-      </span>
       <div>
         <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
           {label}
