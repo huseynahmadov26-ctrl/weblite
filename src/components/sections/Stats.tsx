@@ -2,26 +2,26 @@ const stats = [
   {
     v: 7,
     s: "d",
-    label: "Fast Delivery",
-    sub: "Average time to launch a landing page",
+    label: "Sürətli Təhvil",
+    sub: "Landing səhifəsinin yayıma çıxması üçün orta müddət",
   },
   {
     v: 100,
     s: "%",
-    label: "Responsive Design",
-    sub: "Across every screen and device",
+    label: "Responsive Dizayn",
+    sub: "Hər ekran və cihaz üçün uyğun görünüş",
   },
   {
     v: 100,
     s: "%",
-    label: "Client Focused",
-    sub: "Dedicated partnership end-to-end",
+    label: "Müştəri Yönümlü",
+    sub: "Başdan sona xüsusi əməkdaşlıq",
   },
   {
     v: 12,
     s: "+",
-    label: "Modern Technologies",
-    sub: "Trusted, production-grade stack",
+    label: "Müasir Texnologiyalar",
+    sub: "Etibarlı və real layihələr üçün hazır texnoloji baza",
   },
 ];
 

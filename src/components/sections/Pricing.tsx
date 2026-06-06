@@ -3,52 +3,80 @@ import { SectionHeading } from "./SectionHeading";
 
 const tiers = [
   {
-    name: "Starter",
-    price: "$260-499",
-    desc: "A polished single-page presence for new ventures.",
+    name: "Əsas",
+    price: "300₼-600₼",
+    desc: "Kiçik bizneslər üçün sürətli və peşəkar veb sayt həlli.",
     features: [
-      "1-page modern site",
-      "Responsive design",
-      "Basic SEO setup",
-      "Contact form",
-      "1 round of revisions",
+      "Əsas səhifə, Haqqımızda, Xidmətlər, Qalereya, Əlaqə",
+      "Mobil uyğun (Responsive) dizayn",
+      "Müasir və səliqəli interfeys",
+      "WhatsApp və Zəng düymələri",
+      "Sosial şəbəkə inteqrasiyası",
+      "Əlaqə forması",
+      "SSL təhlükəsizliyi (HTTPS)",
+      "Domain və hosting qoşulması",
     ],
   },
   {
-    name: "Business",
-    price: "$1,250-1,599",
+    name: "Standart",
+    price: "900₼-1,700₼",
     featured: true,
-    desc: "A complete multi-page website for growing brands.",
+    desc: "Böyüyən bizneslər üçün modern və SEO optimizəli həll.",
     features: [
-      "Up to 6 pages",
-      "Custom UI design",
-      "On-page SEO",
-      "CMS integration",
-      "Performance tuning",
-      "Priority support",
+      "Premium UI/UX dizayn",
+      "SEO əsas optimizasiya",
+      "Google title və meta description",
+      "Sürət optimizasiyası",
+      "WhatsApp, Zəng və Email düymələri",
+      "Əlaqə forması",
+      "Portfolio / Qalereya sistemi",
+      "Animasiyalar və modern keçidlər",
+      "SSL təhlükəsizliyi",
+      "Domain və hosting tam konfiqurasiyası",
     ],
   },
   {
     name: "Premium",
-    price: "$3,499+",
-    desc: "Tailored experiences with advanced features.",
+    price: "2,000₼-3,000₼+",
+    desc: "Admin panel və xüsusi funksiyalarla tam peşəkar sistem.",
     features: [
-      "Unlimited pages",
-      "Custom animations",
-      "Advanced SEO + analytics",
-      "Integrations & APIs",
-      "Ongoing support plan",
+      "Fərdi UI/UX dizayn",
+      "Admin İdarəetmə Paneli",
+      "Məhsul və xidmət idarəetməsi",
+      "Qiymət, şəkil və video yeniləmələri",
+      "Blog sistemi",
+      "Onlayn sifariş / müraciət sistemi",
+      "Tam SEO optimizasiya",
+      "Yüksək performans optimizasiyası",
+      "Təhlükəsizlik həlləri",
+      "Çoxdilli dəstək (AZ / RU / EN)",
+      "Google Analytics inteqrasiyası",
+      "Hosting və domain idarəetməsi",
     ],
   },
 ];
 
+const extras = [
+  {
+    name: "Logo Dizayn",
+    price: "30₼-120₼",
+  },
+  {
+    name: "Vizitkart Dizayn",
+    price: "20₼-60₼",
+  },
+  {
+    name: "Instagram Dizayn Paketi",
+    price: "40₼ - 150₼",
+  },
+];
 export function Pricing() {
   return (
     <section id="pricing" className="relative py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
-          eyebrow="Pricing"
-          title="Simple plans, transparent value"
+          eyebrow="Qiymətlər"
+          title="Sadə paketlər, şəffaf dəyər"
           sub="Final pricing depends on project requirements — every plan is tailored to your scope."
         />
 
@@ -58,13 +86,13 @@ export function Pricing() {
               key={t.name}
               className={`relative rounded-3xl p-7 border transition-soft ${
                 t.featured
-                  ? "border-primary/40 bg-gradient-card shadow-glow"
+                  ? "border-primary/40 bg-gradient-card shadow-glow-sm"
                   : "border-border/70 bg-gradient-card hover:border-primary/30"
               }`}
             >
               {t.featured && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-primary px-3 py-1 text-[11px] font-medium text-primary-foreground shadow-glow-sm">
-                  Most Popular
+                  Ən çox seçilən
                 </div>
               )}
               <h3 className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
@@ -92,11 +120,11 @@ export function Pricing() {
                 href="#contact"
                 className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-soft ${
                   t.featured
-                    ? "bg-gradient-primary text-primary-foreground shadow-glow-sm hover:shadow-glow"
+                    ? "bg-gradient-primary text-primary-foreground shadow-glow-sm hover:bg-primary-hover hover:bg-none"
                     : "glass hover:bg-surface-elevated"
                 }`}
               >
-                Choose {t.name}
+                {t.name} paketini seç
               </a>
             </div>
           ))}

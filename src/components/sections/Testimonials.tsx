@@ -3,19 +3,19 @@ import { SectionHeading } from "./SectionHeading";
 
 const items = [
   {
-    q: "Web Lite delivered a site that finally matches our brand. It feels fast, polished, and unmistakably us.",
+    q: "Web Lite nəhayət brendimizə uyğun gələn bir sayt hazırladı. Sayt sürətli, səliqəli və tam bizim üslubumuzdadır.",
     n: "Amelia Hart",
-    r: "Founder, North & Field",
+    r: "Təsisçi, North & Field",
   },
   {
-    q: "Working with the team felt effortless. Crisp design, clear communication and an obsession with detail.",
+    q: "Komanda ilə işləmək çox rahat idi. Təmiz dizayn, aydın ünsiyyət və detallara xüsusi diqqət.",
     n: "Daniel Okafor",
     r: "CEO, Layer Studio",
   },
   {
-    q: "Our conversion rate doubled within a month. The new site is genuinely a business asset.",
+    q: "Konversiya göstəricimiz bir ay ərzində iki dəfə artdı. Yeni sayt həqiqətən biznes üçün dəyərli aktivdir.",
     n: "Sara Lindqvist",
-    r: "Marketing Lead, Mosaic",
+    r: "Marketinq rəhbəri, Mosaic",
   },
 ];
 
@@ -24,8 +24,8 @@ export function Testimonials() {
     <section className="relative py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
-          eyebrow="Testimonials"
-          title="Words from the people we work with"
+          eyebrow="Rəylər"
+          title="Birlikdə işlədiyimiz insanların fikirləri"
         />
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {items.map((t) => (

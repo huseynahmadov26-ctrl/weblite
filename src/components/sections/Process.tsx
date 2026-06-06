@@ -3,28 +3,28 @@ import { SectionHeading } from "./SectionHeading";
 const steps = [
   {
     n: "01",
-    t: "Discovery",
-    d: "We learn your goals, audience and brand before touching pixels.",
+    t: "Kəşf",
+    d: "Dizayna başlamazdan əvvəl məqsədlərinizi, auditoriyanızı və brendinizi öyrənirik.",
   },
   {
     n: "02",
-    t: "Design",
-    d: "Soft, refined interfaces shaped around your story.",
+    t: "Dizayn",
+    d: "Hekayənizə uyğun yumşaq və səliqəli interfeyslər hazırlayırıq.",
   },
   {
     n: "03",
-    t: "Development",
-    d: "Built with modern stacks for speed, security and scale.",
+    t: "Hazırlanma",
+    d: "Sürət, təhlükəsizlik və böyümə üçün müasir texnologiyalarla qurulur.",
   },
   {
     n: "04",
-    t: "Testing",
-    d: "Cross-device QA, performance audits and polish.",
+    t: "Test",
+    d: "Fərqli cihazlarda yoxlama, performans auditi və son cilalama edilir.",
   },
   {
     n: "05",
-    t: "Launch & Support",
-    d: "Smooth deploy and continued partnership after go-live.",
+    t: "Yayım və Dəstək",
+    d: "Rahat yayım və istifadəyə verildikdən sonra davamlı əməkdaşlıq.",
   },
 ];
 
@@ -33,8 +33,8 @@ export function Process() {
     <section id="process" className="relative py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
-          eyebrow="Process"
-          title="A calm, considered path from idea to launch"
+          eyebrow="Proses"
+          title="İdeyadan yayıma qədər düşünülmüş və rahat yol"
         />
 
         <div className="relative mt-16">

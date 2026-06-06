@@ -5,25 +5,25 @@ const projects = [
   {
     tag: "SaaS",
     title: "Nimbus Analytics",
-    desc: "Dashboard concept for a modern analytics platform.",
+    desc: "Müasir analitika platforması üçün dashboard konsepti.",
     hue: 18,
   },
   {
-    tag: "E-Commerce",
+    tag: "E-ticarət",
     title: "Maison Noir",
-    desc: "Editorial storefront for a luxury fashion label.",
+    desc: "Lüks moda brendi üçün editorial üslubda mağaza konsepti.",
     hue: 12,
   },
   {
-    tag: "Studio",
+    tag: "Studiya",
     title: "Atelier 22",
-    desc: "Portfolio site for an independent design studio.",
+    desc: "Müstəqil dizayn studiyası üçün portfolio saytı.",
     hue: 26,
   },
   {
     tag: "Startup",
     title: "Orbit Mobile",
-    desc: "Marketing site for a productivity app launch.",
+    desc: "Produktivlik tətbiqinin təqdimatı üçün marketinq saytı.",
     hue: 8,
   },
 ];
@@ -33,9 +33,9 @@ export function Portfolio() {
     <section id="work" className="relative py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
-          eyebrow="Concept Projects"
-          title="A glimpse of what we can build for you"
-          sub="A curated set of concept sites that showcase our design and engineering capabilities."
+          eyebrow="Konsept Layihələr"
+          title="Sizin üçün nələr qura biləcəyimizə qısa baxış"
+          sub="Dizayn və texniki imkanlarımızı göstərən seçilmiş konsept saytlar."
         />
 
         <div className="mt-14 grid gap-5 md:grid-cols-2">

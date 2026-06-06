@@ -41,7 +41,7 @@ export function Contact() {
             </div>
             <button
               type="submit"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow-sm hover:shadow-glow transition-soft"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow-sm transition-soft hover:bg-primary-hover hover:bg-none"
             >
               {sent ? "Message sent — thank you" : "Send message"}
               <Send className="h-4 w-4" />

@@ -6,21 +6,21 @@ export function About() {
           <div>
             <span className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
               <span className="h-1 w-1 rounded-full bg-primary shadow-glow-sm" />
-              About
+              Haqqımızda
             </span>
             <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] text-gradient">
-              A growing studio shaping the modern web
+              Müasir vebi formalaşdıran inkişaf edən studiya
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              Web Lite is a small, focused digital agency helping businesses
-              build a strong online presence through refined design and modern
-              engineering. We believe great websites aren't loud — they're
-              clear, fast, and effortlessly premium.
+              Web Lite bizneslərə səliqəli dizayn və müasir texniki həllərlə
+              güclü onlayn mövcudluq qurmağa kömək edən kiçik və fokuslanmış
+              rəqəmsal agentlikdir. Biz inanırıq ki, yaxşı veb sayt səs-küylü
+              olmur; aydın, sürətli və rahat şəkildə premium hiss yaradır.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Whether you're launching your first site or rethinking an existing
-              brand, we partner with you end-to-end to deliver work that feels
-              considered in every pixel.
+              İstər ilk saytınızı yayıma çıxarırsınız, istər mövcud brendi
+              yenidən düşünürsünüz, hər pikseli düşünülmüş hiss edən nəticə
+              təqdim etmək üçün sizinlə başdan sona əməkdaşlıq edirik.
             </p>
           </div>
 
@@ -31,10 +31,10 @@ export function About() {
             />
             <div className="relative grid grid-cols-2 gap-3">
               {[
-                { k: "Craft", v: "Design-led approach" },
-                { k: "Speed", v: "Lightweight delivery" },
-                { k: "Quality", v: "Audited & tested" },
-                { k: "Care", v: "Long-term partner" },
+                { k: "Ustalıq", v: "Dizayn yönümlü yanaşma" },
+                { k: "Sürət", v: "Yüngül və çevik təhvil" },
+                { k: "Keyfiyyət", v: "Yoxlanılmış və test edilmiş" },
+                { k: "Qayğı", v: "Uzunmüddətli tərəfdaş" },
               ].map((b) => (
                 <div key={b.k} className="rounded-2xl glass p-5">
                   <div className="text-[11px] uppercase tracking-[0.18em] text-primary">

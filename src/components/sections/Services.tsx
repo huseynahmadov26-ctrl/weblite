@@ -11,33 +11,33 @@ import { SectionHeading } from "./SectionHeading";
 const services = [
   {
     icon: Code2,
-    title: "Website Development",
-    desc: "Custom-built sites engineered for speed, accessibility, and clean code.",
+    title: "Veb Sayt Hazırlanması",
+    desc: "Sürət, əlçatanlıq və təmiz kod üçün xüsusi hazırlanmış veb saytlar.",
   },
   {
     icon: Layout,
-    title: "Landing Pages",
-    desc: "High-converting pages designed to launch products and capture attention.",
+    title: "Landing Səhifələri",
+    desc: "Məhsulları təqdim etmək və diqqət cəlb etmək üçün yüksək nəticəli səhifələr.",
   },
   {
     icon: Palette,
-    title: "UI / UX Design",
-    desc: "Soft, refined interfaces with intuitive flows and a premium feel.",
+    title: "UI / UX Dizayn",
+    desc: "Rahat axınlara və premium hissə malik yumşaq, səliqəli interfeyslər.",
   },
   {
     icon: RefreshCcw,
-    title: "Website Redesign",
-    desc: "Modernize outdated sites with new layouts, performance, and polish.",
+    title: "Veb Sayt Yenilənməsi",
+    desc: "Köhnə saytları yeni struktur, performans və peşəkar görünüşlə modernləşdiririk.",
   },
   {
     icon: Search,
-    title: "SEO Optimization",
-    desc: "Technical and on-page SEO so your site is found and trusted by Google.",
+    title: "SEO Optimizasiyası",
+    desc: "Saytınızın Google-da tapılması və etibar qazanması üçün texniki və səhifədaxili SEO.",
   },
   {
     icon: LifeBuoy,
-    title: "Technical Support",
-    desc: "Reliable post-launch maintenance, updates and ongoing improvements.",
+    title: "Texniki Dəstək",
+    desc: "Yayımdan sonra etibarlı baxım, yeniləmələr və davamlı təkmilləşdirmələr.",
   },
 ];
 
@@ -46,9 +46,9 @@ export function Services() {
     <section id="services" className="relative py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
-          eyebrow="Services"
-          title="Everything you need to launch online"
-          sub="From a single landing page to a full digital presence — Web Lite covers every step."
+          eyebrow="Xidmətlər"
+          title="Onlayn başlamaq üçün lazım olan hər şey"
+          sub="Tək bir landing səhifəsindən tam rəqəmsal mövcudluğa qədər Web Lite hər addımı əhatə edir."
         />
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -57,15 +57,8 @@ export function Services() {
               key={s.title}
               className="group relative rounded-2xl bg-gradient-card border border-border/70 p-6 transition-soft hover:border-primary/40 hover:-translate-y-1"
             >
-              <div
-                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-soft pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(400px circle at var(--x,50%) var(--y,0%), oklch(0.68 0.20 22 / 0.10), transparent 60%)",
-                }}
-              />
               <div className="relative">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl glass shadow-inner-soft group-hover:shadow-glow-sm transition-soft">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl glass shadow-inner-soft transition-soft group-hover:bg-surface-elevated">
                   <s.icon className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="mt-5 text-lg font-medium">{s.title}</h3>

@@ -11,33 +11,33 @@ import { SectionHeading } from "./SectionHeading";
 const items = [
   {
     icon: Sparkles,
-    t: "Modern Design",
-    d: "Trend-aware aesthetics built around clarity and craft.",
+    t: "Müasir Dizayn",
+    d: "Aydınlıq və peşəkarlıq üzərində qurulan trendə uyğun estetika.",
   },
   {
     icon: Smartphone,
-    t: "Mobile Responsive",
-    d: "Pixel-perfect on every screen, from phones to ultra-wide.",
+    t: "Mobil Uyğunluq",
+    d: "Telefondan ultra-geniş ekranlara qədər hər ölçüdə dəqiq görünüş.",
   },
   {
     icon: Zap,
-    t: "Fast Delivery",
-    d: "Lean process and tight loops — most sites ship in weeks.",
+    t: "Sürətli Təhvil",
+    d: "Sadə proses və çevik iş axını ilə saytların çoxu bir neçə həftəyə hazır olur.",
   },
   {
     icon: Search,
-    t: "SEO Friendly",
-    d: "Semantic markup, fast loads, and clean metadata baked in.",
+    t: "SEO Uyğun",
+    d: "Semantik struktur, sürətli yüklənmə və təmiz metadata əsasdan qurulur.",
   },
   {
     icon: Layers,
-    t: "Scalable Solutions",
-    d: "Architectures that grow with you, not against you.",
+    t: "Ölçülə Bilən Həllər",
+    d: "Sizinlə birlikdə böyüyən, sizi məhdudlaşdırmayan arxitektura.",
   },
   {
     icon: HeartHandshake,
-    t: "Ongoing Support",
-    d: "We stay around after launch to help your site evolve.",
+    t: "Davamlı Dəstək",
+    d: "Yayımdan sonra da saytınızın inkişafına kömək etmək üçün yanınızdayıq.",
   },
 ];
 
@@ -46,9 +46,9 @@ export function WhyUs() {
     <section className="relative py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
-          eyebrow="Why Web Lite"
-          title="Premium quality, without the friction"
-          sub="Every detail is engineered to feel light, fast, and effortlessly modern."
+          eyebrow="Niyə Web Lite"
+          title="Çətinliksiz premium keyfiyyət"
+          sub="Hər detal yüngül, sürətli və rahat modern hiss yaratmaq üçün hazırlanır."
         />
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-border/60 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#process", label: "Process" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#work", label: "Work" },
-  { href: "#faq", label: "Questions" },
+  { href: "#services", label: "Xidmətlər" },
+  { href: "#process", label: "Proses" },
+  { href: "#pricing", label: "Qiymətlər" },
+  { href: "#work", label: "İşlər" },
+  { href: "#faq", label: "Suallar" },
 ];
 
 export function Nav() {
@@ -77,16 +77,16 @@ export function Nav() {
           <div className="flex items-center gap-2">
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center rounded-full bg-gradient-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-glow-sm hover:shadow-glow transition-soft"
+              className="hidden sm:inline-flex items-center rounded-full bg-gradient-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-glow-sm transition-soft hover:bg-primary-hover hover:bg-none"
             >
-              Get Started
+              Başlayaq
             </a>
             <button
               aria-label="Toggle menu"
               onClick={() => setOpen((v) => !v)}
               className="md:hidden h-9 w-9 grid place-items-center rounded-lg border border-border/60"
             >
-              <span className="sr-only">Menu</span>
+              <span className="sr-only">Menyu</span>
               <div className="flex flex-col gap-1">
                 <span
                   className={`h-px w-4 bg-foreground transition-soft ${open ? "translate-y-1 rotate-45" : ""}`}
@@ -120,7 +120,7 @@ export function Nav() {
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex justify-center rounded-full bg-gradient-primary px-4 py-2 font-medium text-primary-foreground"
               >
-                Get Started
+                Başlayaq
               </a>
             </nav>
           </div>
