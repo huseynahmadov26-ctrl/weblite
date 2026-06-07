@@ -9,12 +9,10 @@ const Services = lazy(() => import("@/components/sections/Services").then(m => (
 const WhyUs = lazy(() => import("@/components/sections/WhyUs").then(m => ({ default: m.WhyUs })));
 const Process = lazy(() => import("@/components/sections/Process").then(m => ({ default: m.Process })));
 const Pricing = lazy(() => import("@/components/sections/Pricing").then(m => ({ default: m.Pricing })));
-const Portfolio = lazy(() => import("@/components/sections/Portfolio").then(m => ({ default: m.Portfolio })));
 const About = lazy(() => import("@/components/sections/About").then(m => ({ default: m.About })));
 const Stats = lazy(() => import("@/components/sections/Stats").then(m => ({ default: m.Stats })));
 const Faq = lazy(() => import("@/components/sections/Faq").then(m => ({ default: m.Faq })));
 const Blog = lazy(() => import("@/components/sections/Blog").then(m => ({ default: m.Blog })));
-const Testimonials = lazy(() => import("@/components/sections/Testimonials").then(m => ({ default: m.Testimonials })));
 const Contact = lazy(() => import("@/components/sections/Contact").then(m => ({ default: m.Contact })));
 
 export const Route = createFileRoute("/")({
@@ -41,7 +39,7 @@ export const Route = createFileRoute("/")({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
       },
     ],
   }),
@@ -51,6 +49,14 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="relative min-h-screen bg-neon-screen text-foreground overflow-hidden">
+      <div
+        aria-hidden
+        className="ambient-blur -left-24 top-28 h-72 w-72 rounded-full bg-primary/20"
+      />
+      <div
+        aria-hidden
+        className="ambient-blur right-[-6rem] top-[42rem] h-80 w-80 rounded-full bg-slate-500/15"
+      />
       <Nav />
       <main>
         <Hero />
@@ -70,13 +76,7 @@ function Index() {
           <Pricing />
         </Suspense>
         <Suspense fallback={<div className="h-24" />}>
-          <Portfolio />
-        </Suspense>
-        <Suspense fallback={<div className="h-24" />}>
           <About />
-        </Suspense>
-        <Suspense fallback={<div className="h-24" />}>
-          <Testimonials />
         </Suspense>
         <Suspense fallback={<div className="h-24" />}>
           <Blog />

@@ -43,7 +43,7 @@ export function Portfolio() {
             <a
               key={p.title}
               href="#contact"
-              className="group relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-card px-5 py-4 transition-soft hover:border-primary/40 hover:-translate-y-1"
+              className="soft-card soft-card-hover group relative overflow-hidden px-5 py-4"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>

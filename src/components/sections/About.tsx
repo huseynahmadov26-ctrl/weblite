@@ -8,19 +8,17 @@ export function About() {
               <span className="h-1 w-1 rounded-full bg-primary shadow-glow-sm" />
               Haqqımızda
             </span>
+
             <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] text-gradient">
-              Müasir vebi formalaşdıran inkişaf edən studiya
+              Rəqəmsal dünyada brendləri daha güclü edən studiya
             </h2>
+
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              Web Lite bizneslərə səliqəli dizayn və müasir texniki həllərlə
-              güclü onlayn mövcudluq qurmağa kömək edən kiçik və fokuslanmış
-              rəqəmsal agentlikdir. Biz inanırıq ki, yaxşı veb sayt səs-küylü
-              olmur; aydın, sürətli və rahat şəkildə premium hiss yaradır.
+              Web Lite — müasir dizaynı, sürətli performansı və funksional veb həlləri birləşdirən fokuslanmış rəqəmsal agentlikdir. Məqsədimiz sadəcə sayt hazırlamaq deyil, bizneslər üçün real dəyər yaradan rəqəmsal təcrübələr qurmaqdır.
             </p>
+
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              İstər ilk saytınızı yayıma çıxarırsınız, istər mövcud brendi
-              yenidən düşünürsünüz, hər pikseli düşünülmüş hiss edən nəticə
-              təqdim etmək üçün sizinlə başdan sona əməkdaşlıq edirik.
+              İstər yeni başlanğıc, istərsə də mövcud brendin yenilənməsi olsun — hər layihədə aydınlıq, sadəlik və premium hiss əsas prioritetimizdir.
             </p>
           </div>
 
@@ -29,14 +27,15 @@ export function About() {
               className="absolute -inset-6 rounded-[2rem] bg-gradient-primary opacity-10"
               aria-hidden
             />
+
             <div className="relative grid grid-cols-2 gap-3">
               {[
-                { k: "Ustalıq", v: "Dizayn yönümlü yanaşma" },
-                { k: "Sürət", v: "Yüngül və çevik təhvil" },
-                { k: "Keyfiyyət", v: "Yoxlanılmış və test edilmiş" },
-                { k: "Qayğı", v: "Uzunmüddətli tərəfdaş" },
+                { k: "Fokus", v: "Sadə və məqsədyönlü həllər" },
+                { k: "Sürət", v: "Optimallaşdırılmış yüksək performans" },
+                { k: "Keyfiyyət", v: "Detallara diqqət və test edilmiş nəticə" },
+                { k: "Əməkdaşlıq", v: "Uzunmüddətli və etibarlı tərəfdaşlıq" },
               ].map((b) => (
-                <div key={b.k} className="rounded-2xl glass p-5">
+                <div key={b.k} className="soft-card soft-card-hover p-5">
                   <div className="text-[11px] uppercase tracking-[0.18em] text-primary">
                     {b.k}
                   </div>

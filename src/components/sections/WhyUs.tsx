@@ -1,43 +1,43 @@
 import {
   Sparkles,
-  Smartphone,
   Zap,
-  Search,
-  Layers,
-  HeartHandshake,
+  Palette,
+  TrendingUp,
+  DollarSign,
+  ShieldCheck,
 } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const items = [
   {
-    icon: Sparkles,
-    t: "Müasir Dizayn",
-    d: "Aydınlıq və peşəkarlıq üzərində qurulan trendə uyğun estetika.",
-  },
-  {
-    icon: Smartphone,
-    t: "Mobil Uyğunluq",
-    d: "Telefondan ultra-geniş ekranlara qədər hər ölçüdə dəqiq görünüş.",
-  },
-  {
     icon: Zap,
-    t: "Sürətli Təhvil",
-    d: "Sadə proses və çevik iş axını ilə saytların çoxu bir neçə həftəyə hazır olur.",
+    t: "Sürətli İnkişaf",
+    d: "Fikirlərinizi gecikdirmədən real, işlək və nəticə verən veb həllərə çeviririk.",
   },
   {
-    icon: Search,
-    t: "SEO Uyğun",
-    d: "Semantik struktur, sürətli yüklənmə və təmiz metadata əsasdan qurulur.",
+    icon: Sparkles,
+    t: "Müasir Texnologiyalar",
+    d: "Ən yeni texnologiyalarla rəqabətdə sizi bir addım öndə saxlayırıq.",
   },
   {
-    icon: Layers,
-    t: "Ölçülə Bilən Həllər",
-    d: "Sizinlə birlikdə böyüyən, sizi məhdudlaşdırmayan arxitektura.",
+    icon: Palette,
+    t: "Premium Dizayn",
+    d: "Brendinizə uyğun, estetik və istifadəçi yönümlü interfeyslər hazırlayırıq.",
   },
   {
-    icon: HeartHandshake,
-    t: "Davamlı Dəstək",
-    d: "Yayımdan sonra da saytınızın inkişafına kömək etmək üçün yanınızdayıq.",
+    icon: ShieldCheck,
+    t: "Gələcək Yönümlü Sistemlər",
+    d: "Dayanıqlı və genişlənə bilən sistemlər quraraq uzunmüddətli istifadə təmin edirik.",
+  },
+  {
+    icon: TrendingUp,
+    t: "Satışda Artım",
+    d: "Dizayn və struktur optimizasiyası ilə müştəri çevirmə (conversion) səviyyəsini artırırıq.",
+  },
+  {
+    icon: DollarSign,
+    t: "Münasib Qiymət",
+    d: "Yüksək keyfiyyəti büdcəyə uyğun şəkildə təqdim edirik.",
   },
 ];
 
@@ -47,15 +47,15 @@ export function WhyUs() {
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="Niyə Web Lite"
-          title="Çətinliksiz premium keyfiyyət"
-          sub="Hər detal yüngül, sürətli və rahat modern hiss yaratmaq üçün hazırlanır."
+          title="Niyə bizimlə çalışmalısınız?"
+          sub="Sizin brendiniz üçün sürətli, müasir və nəticə yönümlü veb həllər təqdim edirik."
         />
 
-        <div className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-border/60 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it) => (
             <div
               key={it.t}
-              className="group relative bg-background p-7 hover:bg-surface transition-soft"
+              className="soft-card soft-card-hover group relative p-7"
             >
               <it.icon className="h-5 w-5 text-primary transition-soft group-hover:scale-110" />
               <h3 className="mt-5 text-base font-medium">{it.t}</h3>

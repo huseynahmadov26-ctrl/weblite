@@ -3,7 +3,7 @@ import { SectionHeading } from "./SectionHeading";
 
 const tiers = [
   {
-    name: "Əsas",
+    name: "Basic",
     price: "300₼-600₼",
     desc: "Kiçik bizneslər üçün sürətli və peşəkar veb sayt həlli.",
     features: [
@@ -84,10 +84,10 @@ export function Pricing() {
           {tiers.map((t) => (
             <div
               key={t.name}
-              className={`relative rounded-3xl p-7 border transition-soft ${
+              className={`soft-card soft-card-hover relative p-7 ${
                 t.featured
-                  ? "border-primary/40 bg-gradient-card shadow-glow-sm"
-                  : "border-border/70 bg-gradient-card hover:border-primary/30"
+                  ? "border-primary/40 shadow-glow-sm"
+                  : "border-border/70"
               }`}
             >
               {t.featured && (
@@ -120,7 +120,7 @@ export function Pricing() {
                 href="#contact"
                 className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-soft ${
                   t.featured
-                    ? "bg-gradient-primary text-primary-foreground shadow-glow-sm hover:bg-primary-hover hover:bg-none"
+                    ? "soft-button bg-gradient-primary text-primary-foreground hover:bg-primary-hover hover:bg-none"
                     : "glass hover:bg-surface-elevated"
                 }`}
               >

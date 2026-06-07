@@ -77,7 +77,7 @@ export function Nav() {
           <div className="flex items-center gap-2">
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center rounded-full bg-gradient-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-glow-sm transition-soft hover:bg-primary-hover hover:bg-none"
+              className="soft-button hidden sm:inline-flex items-center rounded-full bg-gradient-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary-hover hover:bg-none"
             >
               Başlayaq
             </a>
@@ -118,7 +118,7 @@ export function Nav() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-flex justify-center rounded-full bg-gradient-primary px-4 py-2 font-medium text-primary-foreground"
+                className="soft-button mt-2 inline-flex justify-center rounded-full bg-gradient-primary px-4 py-2 font-medium text-primary-foreground"
               >
                 Başlayaq
               </a>

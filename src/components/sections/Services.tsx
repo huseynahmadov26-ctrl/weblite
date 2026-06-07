@@ -5,39 +5,40 @@ import {
   RefreshCcw,
   Search,
   LifeBuoy,
+  ShieldCheck
 } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const services = [
   {
     icon: Code2,
-    title: "Veb Sayt Hazırlanması",
-    desc: "Sürət, əlçatanlıq və təmiz kod üçün xüsusi hazırlanmış veb saytlar.",
+    title: "Biznes Saytlarının Hazırlanması",
+    desc: "Brendinizi peşəkar təqdim edən, sürətli və müasir biznes veb saytları hazırlayırıq.",
   },
   {
     icon: Layout,
-    title: "Landing Səhifələri",
-    desc: "Məhsulları təqdim etmək və diqqət cəlb etmək üçün yüksək nəticəli səhifələr.",
+    title: "Landing Page & E-commerce ",
+    desc: "Satış yönümlü landing səhifələr və tam funksional onlayn mağazalar yaradırıq.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Admin panel, Login/Register sistemi",
+    desc: "Login/Register və idarəetmə panelləri ilə tam funksional veb sistemlər hazırlayırıq.",
   },
   {
     icon: Palette,
-    title: "UI / UX Dizayn",
-    desc: "Rahat axınlara və premium hissə malik yumşaq, səliqəli interfeyslər.",
-  },
-  {
-    icon: RefreshCcw,
-    title: "Veb Sayt Yenilənməsi",
-    desc: "Köhnə saytları yeni struktur, performans və peşəkar görünüşlə modernləşdiririk.",
+    title: "Responsive UI/UX Dizayn",
+    desc: "Bütün cihazlara uyğun, müasir və istifadəçi yönümlü interfeyslər dizayn edirik.",
   },
   {
     icon: Search,
-    title: "SEO Optimizasiyası",
-    desc: "Saytınızın Google-da tapılması və etibar qazanması üçün texniki və səhifədaxili SEO.",
+    title: "SEO optimizasiya & Sayt sürəti",
+    desc: "Google görünürlüğünü artırır, sayt sürətini və texniki keyfiyyəti optimallaşdırırıq.",
   },
   {
     icon: LifeBuoy,
-    title: "Texniki Dəstək",
-    desc: "Yayımdan sonra etibarlı baxım, yeniləmələr və davamlı təkmilləşdirmələr.",
+    title: "Domain-hosting & Texniki dəstək",
+    desc: "Saytın yayımlanması, hosting qurulumu və davamlı texniki dəstək göstəririk.",
   },
 ];
 
@@ -55,7 +56,7 @@ export function Services() {
           {services.map((s) => (
             <div
               key={s.title}
-              className="group relative rounded-2xl bg-gradient-card border border-border/70 p-6 transition-soft hover:border-primary/40 hover:-translate-y-1"
+              className="soft-card soft-card-hover group relative p-6"
             >
               <div className="relative">
                 <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl glass shadow-inner-soft transition-soft group-hover:bg-surface-elevated">

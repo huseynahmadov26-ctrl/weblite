@@ -31,7 +31,7 @@ export function Testimonials() {
           {items.map((t) => (
             <figure
               key={t.n}
-              className="rounded-3xl glass p-7 flex flex-col gap-6"
+              className="soft-card soft-card-hover p-7 flex flex-col gap-6"
             >
               <Quote className="h-6 w-6 text-primary" />
               <blockquote className="text-base leading-relaxed text-foreground/90">

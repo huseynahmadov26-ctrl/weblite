@@ -11,7 +11,7 @@ export function Hero() {
       <div className="absolute inset-0 grid-bg" aria-hidden />
       <div
         aria-hidden
-        className="absolute -top-32 left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full opacity-70"
+        className="absolute -top-32 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full opacity-60"
         style={{
           background:
             "radial-gradient(circle, rgba(239, 68, 68, 0.24), transparent 62%)",
@@ -41,21 +41,22 @@ export function Hero() {
         </div>
 
         <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-[5.25rem] leading-[1.02] text-gradient">
-          Biz müasir veb saytlar hazırlayırıq <br className="hidden md:block" />
-          və onlar{" "}
-          <em className="not-italic text-gradient-red">bizneslərin böyüməsinə kömək edir</em>
-        </h1>
+  Sürətli, müasir və nəticə yönümlü <br className="hidden md:block" />
+  veb saytlarla{" "}
+  <em className="not-italic text-gradient-red">
+    biznesinizi növbəti səviyyəyə daşıyırıq
+  </em>
+</h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-muted-foreground">
-          Web Lite sürətli, responsive və yüksək performanslı veb saytlar
-          dizayn edib hazırlayır. Hər sayt ilk baxışdan brendinizi premium
-          hiss etdirmək üçün yaradılır.
+          Web Lite olaraq bizneslərin rəqəmsal dünyada fərqlənməsi üçün sürətli, premium və istifadəçi yönümlü veb saytlar hazırlayırıq. Məqsədimiz sadəcə gözəl görünən deyil, nəticə verən saytlar yaratmaqdır.
+
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow-sm transition-soft hover:bg-primary-hover hover:bg-none"
+            className="soft-button group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary-hover hover:bg-none"
           >
             Başlayaq
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
