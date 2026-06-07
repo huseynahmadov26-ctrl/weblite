@@ -41,10 +41,10 @@ export function Hero() {
         </div>
 
         <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-[5.25rem] leading-[1.02] text-gradient">
-  Sürətli, müasir və nəticə yönümlü <br className="hidden md:block" />
-  veb saytlarla{" "}
+  Sürətli, Müasir və Nəticə Yönümlü <br className="hidden md:block" />
+  Web Saytlarla{" "}
   <em className="not-italic text-gradient-red">
-    biznesinizi növbəti səviyyəyə daşıyırıq
+    Biznesinizi Növbəti Səviyyəyə Daşıyırıq
   </em>
 </h1>
 

@@ -82,7 +82,16 @@ export function Footer() {
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
                   href="https://wa.me/9940704362011"
                 >
-                  <MessageCircle className="h-4 w-4" /> WhatsApp
+                  <MessageCircle className="h-4 w-4" /> WhatsApp - H.A
+                </a>
+              </li>
+
+              <li>
+                <a
+                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
+                  href="https://wa.me/994559974017"
+                >
+                  <MessageCircle className="h-4 w-4" /> WhatsApp - O.A
                 </a>
               </li>
 
@@ -92,6 +101,14 @@ export function Footer() {
                   href="https://instagram.com/weblite.az"
                 >
                   <Instagram className="h-4 w-4" /> Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
+                  href="https://www.tiktok.com/@weblite.az?_r=1&_t=ZS-970uFWa6aNZ"
+                >
+                  <Instagram className="h-4 w-4" /> TikTok
                 </a>
               </li>
             </ul>

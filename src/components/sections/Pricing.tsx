@@ -63,7 +63,7 @@ export function Pricing() {
         <SectionHeading
           eyebrow="Qiymətlər"
           title="Sadə paketlər, şəffaf dəyər"
-          sub="Final pricing depends on project requirements — every plan is tailored to your scope."
+          sub="Final qiymət layihənin tələblərindən asılıdır — hər plan sizin layihənin miqyasına uyğun şəkildə fərdiləşdirilir."
         />
 
         <div className="mt-16 grid gap-8 md:grid-cols-3 items-stretch">

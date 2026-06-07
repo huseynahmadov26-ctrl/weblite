@@ -4,8 +4,9 @@ const links = [
   { href: "#services", label: "Xidmətlər" },
   { href: "#process", label: "Proses" },
   { href: "#pricing", label: "Qiymətlər" },
-  { href: "#work", label: "İşlər" },
   { href: "#faq", label: "Suallar" },
+  { href: "#about", label: "Haqqında" },
+  { href: "#contact", label: "Əlaqə" },
 ];
 
 export function Nav() {

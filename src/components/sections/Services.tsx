@@ -48,8 +48,8 @@ export function Services() {
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           eyebrow="Xidmətlər"
-          title="Onlayn başlamaq üçün lazım olan hər şey"
-          sub="Tək bir landing səhifəsindən tam rəqəmsal mövcudluğa qədər Web Lite hər addımı əhatə edir."
+          title="Onlayn biznesə başlamaq üçün lazım olan hər şey"
+          sub="Tək bir landing səhifəsindən tam rəqəmsal sistemə qədər Web Lite bütün prosesi sizin üçün hazırlayır."
         />
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -62,7 +62,9 @@ export function Services() {
                 <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl glass shadow-inner-soft transition-soft group-hover:bg-surface-elevated">
                   <s.icon className="h-5 w-5 text-primary" />
                 </div>
+
                 <h3 className="mt-5 text-lg font-medium">{s.title}</h3>
+
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {s.desc}
                 </p>

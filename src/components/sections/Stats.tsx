@@ -1,6 +1,6 @@
 const stats = [
   {
-    v: 7,
+    v: "7-14",
     s: "gün",
     label: "Sürətli təhvil",
     sub: "Landing səhifələrin orta hazırlanma müddəti",
