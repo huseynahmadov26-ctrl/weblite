@@ -56,59 +56,55 @@ const tiers = [
   },
 ];
 
-const extras = [
-  {
-    name: "Logo Dizayn",
-    price: "30₼-120₼",
-  },
-  {
-    name: "Vizitkart Dizayn",
-    price: "20₼-60₼",
-  },
-  {
-    name: "Instagram Dizayn Paketi",
-    price: "40₼ - 150₼",
-  },
-];
 export function Pricing() {
   return (
     <section id="pricing" className="relative py-28">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-8xl px-6">
         <SectionHeading
           eyebrow="Qiymətlər"
           title="Sadə paketlər, şəffaf dəyər"
           sub="Final pricing depends on project requirements — every plan is tailored to your scope."
         />
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
+        <div className="mt-16 grid gap-8 md:grid-cols-3 items-stretch">
           {tiers.map((t) => (
             <div
               key={t.name}
-              className={`soft-card soft-card-hover relative p-7 ${
+              className={`soft-card soft-card-hover relative p-9 flex flex-col justify-between min-h-[520px] ${
                 t.featured
-                  ? "border-primary/40 shadow-glow-sm"
+                  ? "border-primary/40 shadow-glow-sm scale-[1.02]"
                   : "border-border/70"
               }`}
             >
+              {/* badge */}
               {t.featured && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-primary px-3 py-1 text-[11px] font-medium text-primary-foreground shadow-glow-sm">
                   Ən çox seçilən
                 </div>
               )}
-              <h3 className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
+
+              {/* title */}
+              <h3 className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
                 {t.name}
               </h3>
-              <div className="mt-4 flex items-baseline gap-1">
-                <span className="font-display text-5xl text-gradient">
+
+              {/* price (FIXED OVERFLOW) */}
+              <div className="mt-5 flex items-baseline">
+                <span className="font-display text-4xl md:text-5xl text-gradient leading-tight break-words whitespace-normal">
                   {t.price}
                 </span>
               </div>
-              <p className="mt-3 text-sm text-muted-foreground">{t.desc}</p>
 
-              <ul className="mt-6 space-y-3">
+              {/* desc */}
+              <p className="mt-4 text-sm text-muted-foreground">
+                {t.desc}
+              </p>
+
+              {/* features */}
+              <ul className="mt-7 space-y-3 flex-1">
                 {t.features.map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm">
-                    <span className="mt-0.5 grid h-5 w-5 place-items-center rounded-full bg-primary/15">
+                    <span className="mt-0.5 grid h-5 w-5 place-items-center rounded-full bg-primary/15 flex-shrink-0">
                       <Check className="h-3 w-3 text-primary" />
                     </span>
                     <span className="text-foreground/90">{f}</span>
@@ -116,9 +112,10 @@ export function Pricing() {
                 ))}
               </ul>
 
+              {/* button */}
               <a
                 href="#contact"
-                className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-soft ${
+                className={`mt-9 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-soft ${
                   t.featured
                     ? "soft-button bg-gradient-primary text-primary-foreground hover:bg-primary-hover hover:bg-none"
                     : "glass hover:bg-surface-elevated"

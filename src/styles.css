@@ -80,10 +80,10 @@
     radial-gradient(ellipse 52% 42% at 72% 8%, rgba(71, 85, 105, 0.18), transparent 68%);
   --gradient-card: linear-gradient(155deg, rgba(28, 32, 44, 0.88), rgba(19, 22, 31, 0.78) 58%, rgba(22, 25, 35, 0.9));
 
-  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.22);
-  --shadow-elevated: 0 18px 44px rgba(0, 0, 0, 0.28);
-  --shadow-glow: 0 0 28px rgba(230, 57, 70, 0.18);
-  --shadow-glow-sm: 0 0 16px rgba(230, 57, 70, 0.14);
+  --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.2);
+  --shadow-elevated: 0 14px 32px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 20px rgba(230, 57, 70, 0.14);
+  --shadow-glow-sm: 0 0 12px rgba(230, 57, 70, 0.12);
   --shadow-inner-soft: inset 0 1px 0 rgba(255, 255, 255, 0.055);
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -152,9 +152,8 @@ html {
   .bg-neon-screen {
     background-color: var(--background);
     background-image:
-      radial-gradient(circle at 18% 8%, rgba(230, 57, 70, 0.14) 0%, transparent 22%),
-      radial-gradient(circle at 82% 16%, rgba(71, 85, 105, 0.18) 0%, transparent 24%),
-      radial-gradient(circle at 52% 96%, rgba(230, 57, 70, 0.08) 0%, transparent 30%),
+      radial-gradient(circle at 18% 8%, rgba(230, 57, 70, 0.11) 0%, transparent 20%),
+      radial-gradient(circle at 82% 16%, rgba(71, 85, 105, 0.13) 0%, transparent 22%),
       linear-gradient(145deg, #0f1117 0%, #141823 42%, #10131b 72%, #0b0d12 100%);
     background-size: cover;
   }
@@ -176,17 +175,15 @@ html {
   }
 
   .glass {
-    background: rgba(23, 26, 36, 0.68);
+    background: rgba(23, 26, 36, 0.84);
     border: 1px solid rgba(248, 250, 252, 0.1);
     box-shadow: var(--shadow-soft), var(--shadow-inner-soft);
-    backdrop-filter: blur(14px);
   }
 
   .glass-strong {
-    background: rgba(18, 21, 30, 0.86);
+    background: rgba(18, 21, 30, 0.94);
     border: 1px solid rgba(248, 250, 252, 0.12);
     box-shadow: var(--shadow-soft), var(--shadow-inner-soft);
-    backdrop-filter: blur(16px);
   }
 
   .text-gradient {
@@ -225,9 +222,9 @@ html {
 
   .grid-bg {
     background-image:
-      linear-gradient(rgba(248, 250, 252, 0.032) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(248, 250, 252, 0.032) 1px, transparent 1px);
-    background-size: 64px 64px;
+      linear-gradient(rgba(248, 250, 252, 0.024) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(248, 250, 252, 0.024) 1px, transparent 1px);
+    background-size: 80px 80px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
   }
 
@@ -247,7 +244,6 @@ html {
     background-image: var(--gradient-card);
     border: 1px solid rgba(248, 250, 252, 0.1);
     box-shadow: var(--shadow-soft), var(--shadow-inner-soft);
-    backdrop-filter: blur(12px);
     transition:
       transform var(--motion-soft) var(--ease-out-soft),
       border-color var(--motion-soft) var(--ease-out-soft),
@@ -256,9 +252,9 @@ html {
   }
 
   .soft-card-hover:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     border-color: rgba(230, 57, 70, 0.34);
-    box-shadow: var(--shadow-elevated), 0 0 22px rgba(230, 57, 70, 0.08);
+    box-shadow: var(--shadow-elevated), 0 0 14px rgba(230, 57, 70, 0.06);
   }
 
   .soft-button {
@@ -272,16 +268,7 @@ html {
 
   .soft-button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 0 28px rgba(230, 57, 70, 0.24);
-  }
-
-  .ambient-blur {
-    position: absolute;
-    pointer-events: none;
-    filter: blur(38px);
-    opacity: 0.42;
-    transform: translate3d(0, 0, 0);
-    animation: ambient-enter var(--motion-slow) var(--ease-out-soft) both;
+    box-shadow: 0 0 18px rgba(230, 57, 70, 0.2);
   }
 
   .reveal-up {
@@ -297,28 +284,6 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes ambient-enter {
-  from {
-    opacity: 0;
-    transform: translateY(10px) scale(0.98);
-  }
-  to {
-    opacity: 0.42;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@supports (animation-timeline: view()) {
-  main > section:not(:first-child) > .mx-auto,
-  .scroll-reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    animation: reveal-up var(--motion-slow) var(--ease-out-soft) both;
-    animation-timeline: view();
-    animation-range: entry 6% cover 28%;
   }
 }
 

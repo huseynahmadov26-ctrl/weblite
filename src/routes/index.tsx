@@ -49,14 +49,6 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="relative min-h-screen bg-neon-screen text-foreground overflow-hidden">
-      <div
-        aria-hidden
-        className="ambient-blur -left-24 top-28 h-72 w-72 rounded-full bg-primary/20"
-      />
-      <div
-        aria-hidden
-        className="ambient-blur right-[-6rem] top-[42rem] h-80 w-80 rounded-full bg-slate-500/15"
-      />
       <Nav />
       <main>
         <Hero />

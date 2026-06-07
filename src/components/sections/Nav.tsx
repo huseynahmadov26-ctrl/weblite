@@ -51,11 +51,15 @@ export function Nav() {
           }`}
         >
           <a href="#top" className="flex items-center gap-2 group">
-            <span className="relative grid h-8 w-8 place-items-center rounded-xl bg-gradient-primary shadow-glow-sm">
-              <span className="absolute inset-0 rounded-xl bg-gradient-primary opacity-30 group-hover:opacity-50 transition-soft" />
-              <span className="relative text-primary-foreground font-display text-lg leading-none">
-                W
-              </span>
+            <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl border border-white/10 bg-black shadow-glow-sm transition-soft group-hover:border-primary/40">
+              <img
+                src="/weblite-logo-160.jpeg"
+                alt="Web Lite logo"
+                width="40"
+                height="40"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
             </span>
             <span className="font-semibold tracking-tight">
               Web<span className="text-primary"> Lite</span>

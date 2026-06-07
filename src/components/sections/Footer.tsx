@@ -11,10 +11,16 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-primary shadow-glow-sm">
-                <span className="font-display text-lg text-primary-foreground leading-none">
-                  W
-                </span>
+              <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-xl border border-white/10 bg-black shadow-glow-sm">
+                <img
+                  src="/weblite-logo-160.jpeg"
+                  alt="Web Lite logo"
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
               </span>
 
               <span className="font-semibold tracking-tight text-lg">
