@@ -34,8 +34,8 @@
   --color-ring: var(--ring);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
-  --font-display: "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Exo 2", "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Exo 2", "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -108,7 +108,8 @@ html {
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: var(--font-sans);
+    font-family: "Exo 2", "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "ss01", "cv11";
     font-style: normal;
@@ -130,7 +131,22 @@ html {
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
+    font-weight: 600;
     letter-spacing: 0;
+  }
+
+  .font-outfit {
+    font-family: "Outfit", "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+  .font-exo {
+    font-family: "Exo 2", "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    font-style: normal;
   }
 
   .bg-gradient-primary {
