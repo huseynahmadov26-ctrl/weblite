@@ -1,6 +1,50 @@
-import { useMemo, useState } from "react";
+import { type FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { createServerFn, useServerFn } from "@tanstack/react-start";
 import { Instagram, Mail, MessageCircle, Send } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
+
+type RecaptchaInstance = {
+  ready: (cb: () => void) => void;
+  render: (
+    container: Element | string,
+    params: { sitekey: string; theme?: "light" | "dark" },
+  ) => number;
+  reset: (widgetId?: number) => void;
+  getResponse: (widgetId?: number) => string;
+};
+
+const verifyCaptcha = createServerFn({ method: "POST" })
+  .validator((data: { token?: string }) => data)
+  .handler(async ({ data }) => {
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+
+    if (!secretKey) {
+      return { success: false, message: "reCAPTCHA secret key is not configured." };
+    }
+
+    const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        secret: secretKey,
+        response: data.token ?? "",
+      }),
+    });
+
+    const result = (await response.json()) as {
+      success?: boolean;
+      "error-codes"?: string[];
+    };
+
+    if (!response.ok || !result.success) {
+      return {
+        success: false,
+        message: "reCAPTCHA verification failed. Please try again.",
+      };
+    }
+
+    return { success: true };
+  });
 
 const contacts = [
   {
@@ -16,8 +60,16 @@ const contacts = [
 ];
 
 export function Contact() {
+  const verifyCaptchaFn = useServerFn(verifyCaptcha);
+  const recaptchaRef = useRef<HTMLDivElement | null>(null);
+  const widgetIdRef = useRef<number | null>(null);
+
   const [showChoices, setShowChoices] = useState(false);
   const [showWhatsappChoices, setShowWhatsappChoices] = useState(false);
+  const [isVerifying, setIsVerifying] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY ?? "";
 
   const [form, setForm] = useState({
     name: "",
@@ -53,6 +105,96 @@ export function Contact() {
     }
   };
 
+  useEffect(() => {
+    if (!siteKey || typeof window === "undefined") return;
+
+    const getCaptcha = () =>
+      (window as Window & {
+        grecaptcha?: RecaptchaInstance;
+      }).grecaptcha;
+
+    const renderCaptcha = () => {
+      const captchaInstance = getCaptcha();
+
+      if (!recaptchaRef.current || !captchaInstance || widgetIdRef.current !== null) {
+        return;
+      }
+
+      try {
+        widgetIdRef.current = captchaInstance.render(recaptchaRef.current, {
+          sitekey: siteKey,
+          theme: "light",
+        });
+      } catch (error) {
+        console.error("reCAPTCHA render failed", error);
+        setErrorMessage("reCAPTCHA could not be loaded. Please refresh the page.");
+      }
+    };
+
+    if (getCaptcha()) {
+      getCaptcha()?.ready(renderCaptcha);
+      return;
+    }
+
+    const existingScript = document.querySelector(
+      'script[src*="recaptcha/api.js"]',
+    );
+
+    if (existingScript) {
+      existingScript.addEventListener("load", renderCaptcha, { once: true });
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js?render=explicit";
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      getCaptcha()?.ready(renderCaptcha);
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      script.onload = null;
+      if (widgetIdRef.current !== null) {
+        getCaptcha()?.reset(widgetIdRef.current);
+      }
+    };
+  }, [siteKey]);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setErrorMessage("");
+    setShowWhatsappChoices(false);
+
+    const grecaptcha = (window as typeof window & {
+      grecaptcha?: Pick<RecaptchaInstance, "getResponse" | "reset">;
+    }).grecaptcha;
+
+    const token = grecaptcha?.getResponse(widgetIdRef.current ?? undefined);
+
+    if (!token) {
+      setErrorMessage("Please complete the reCAPTCHA check before sending your message.");
+      return;
+    }
+
+    setIsVerifying(true);
+
+    try {
+      const result = await verifyCaptchaFn({ data: { token } });
+
+      if (!result?.success) {
+        setErrorMessage(result?.message ?? "reCAPTCHA verification failed.");
+        grecaptcha?.reset(widgetIdRef.current ?? undefined);
+        return;
+      }
+
+      setShowChoices(true);
+    } finally {
+      setIsVerifying(false);
+    }
+  };
+
   return (
     <section id="contact" className="relative py-28">
       <div className="mx-auto max-w-6xl px-4">
@@ -64,14 +206,7 @@ export function Contact() {
 
         <div className="mt-14 grid gap-6 lg:grid-cols-5">
           {/* FORM */}
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setShowChoices(true);
-              setShowWhatsappChoices(false);
-            }}
-            className="soft-card lg:col-span-3 p-7"
-          >
+          <form onSubmit={handleSubmit} className="soft-card lg:col-span-3 p-7">
             <div className="grid gap-4 sm:grid-cols-2">
               <Field
                 label="Ad Soyad"
@@ -118,13 +253,22 @@ export function Contact() {
               />
             </div>
 
-            <button
-              type="submit"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-white"
-            >
-              Mesaj göndər
-              <Send className="h-4 w-4" />
-            </button>
+            <div className="mt-6 flex flex-col gap-3">
+              <div ref={recaptchaRef} className="flex items-center" />
+
+              {errorMessage ? (
+                <p className="text-sm text-red-500">{errorMessage}</p>
+              ) : null}
+
+              <button
+                type="submit"
+                disabled={isVerifying}
+                className="inline-flex w-fit items-center gap-2 rounded-full bg-black px-6 py-3 text-white disabled:cursor-not-allowed disabled:opacity-70"
+              >
+                {isVerifying ? "Təsdiqlənir..." : "Mesaj göndər"}
+                <Send className="h-4 w-4" />
+              </button>
+            </div>
 
             {/* CHOICES */}
             {showChoices && (
