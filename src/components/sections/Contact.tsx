@@ -23,6 +23,10 @@ type CaptchaVerificationResult = {
   message?: string;
 };
 
+const RECAPTCHA_SITE_KEY =
+  import.meta.env.VITE_RECAPTCHA_SITE_KEY ??
+  "6Lf2CxctAAAAAOd_hmi5hxLSMCl44SAeg7Xuc1kG";
+
 const contacts = [
   {
     name: "Huseyn Ahmadov",
@@ -45,7 +49,7 @@ export function Contact() {
   const [isVerifying, setIsVerifying] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY ?? "";
+  const siteKey = RECAPTCHA_SITE_KEY;
 
   const [form, setForm] = useState({
     name: "",
