@@ -1,5 +1,4 @@
 import { type FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { createServerFn, useServerFn } from "@tanstack/react-start";
 import { Instagram, Mail, MessageCircle, Send } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
@@ -7,44 +6,22 @@ type RecaptchaInstance = {
   ready: (cb: () => void) => void;
   render: (
     container: Element | string,
-    params: { sitekey: string; theme?: "light" | "dark" },
+    params: {
+      sitekey: string;
+      theme?: "light" | "dark";
+      callback?: () => void;
+      "expired-callback"?: () => void;
+      "error-callback"?: () => void;
+    },
   ) => number;
   reset: (widgetId?: number) => void;
   getResponse: (widgetId?: number) => string;
 };
 
-const verifyCaptcha = createServerFn({ method: "POST" })
-  .validator((data: { token?: string }) => data)
-  .handler(async ({ data }) => {
-    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-
-    if (!secretKey) {
-      return { success: false, message: "reCAPTCHA secret key is not configured." };
-    }
-
-    const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-      method: "POST",
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        secret: secretKey,
-        response: data.token ?? "",
-      }),
-    });
-
-    const result = (await response.json()) as {
-      success?: boolean;
-      "error-codes"?: string[];
-    };
-
-    if (!response.ok || !result.success) {
-      return {
-        success: false,
-        message: "reCAPTCHA verification failed. Please try again.",
-      };
-    }
-
-    return { success: true };
-  });
+type CaptchaVerificationResult = {
+  success: boolean;
+  message?: string;
+};
 
 const contacts = [
   {
@@ -60,7 +37,6 @@ const contacts = [
 ];
 
 export function Contact() {
-  const verifyCaptchaFn = useServerFn(verifyCaptcha);
   const recaptchaRef = useRef<HTMLDivElement | null>(null);
   const widgetIdRef = useRef<number | null>(null);
 
@@ -124,6 +100,15 @@ export function Contact() {
         widgetIdRef.current = captchaInstance.render(recaptchaRef.current, {
           sitekey: siteKey,
           theme: "light",
+          callback: () => setErrorMessage(""),
+          "expired-callback": () => {
+            setShowChoices(false);
+            setErrorMessage("reCAPTCHA expired. Please complete it again.");
+          },
+          "error-callback": () => {
+            setShowChoices(false);
+            setErrorMessage("reCAPTCHA could not be verified. Please try again.");
+          },
         });
       } catch (error) {
         console.error("reCAPTCHA render failed", error);
@@ -167,6 +152,11 @@ export function Contact() {
     setErrorMessage("");
     setShowWhatsappChoices(false);
 
+    if (!siteKey) {
+      setErrorMessage("reCAPTCHA site key is not configured.");
+      return;
+    }
+
     const grecaptcha = (window as typeof window & {
       grecaptcha?: Pick<RecaptchaInstance, "getResponse" | "reset">;
     }).grecaptcha;
@@ -181,15 +171,25 @@ export function Contact() {
     setIsVerifying(true);
 
     try {
-      const result = await verifyCaptchaFn({ data: { token } });
+      const response = await fetch("/api/verify-recaptcha", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
 
-      if (!result?.success) {
+      const result = (await response.json()) as CaptchaVerificationResult;
+
+      if (!response.ok || !result?.success) {
         setErrorMessage(result?.message ?? "reCAPTCHA verification failed.");
         grecaptcha?.reset(widgetIdRef.current ?? undefined);
         return;
       }
 
       setShowChoices(true);
+    } catch (error) {
+      console.error("reCAPTCHA verification request failed", error);
+      setErrorMessage("reCAPTCHA verification is unavailable. Please try again.");
+      grecaptcha?.reset(widgetIdRef.current ?? undefined);
     } finally {
       setIsVerifying(false);
     }
