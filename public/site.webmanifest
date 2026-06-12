@@ -1,0 +1,17 @@
+{
+  "name": "Web Lite",
+  "short_name": "Web Lite",
+  "description": "Fast, modern and SEO optimized website making by Web Lite.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#ef4444",
+  "icons": [
+    {
+      "src": "/weblite-logo-160.jpeg",
+      "sizes": "160x160",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

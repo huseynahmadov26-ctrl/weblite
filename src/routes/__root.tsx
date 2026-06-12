@@ -12,6 +12,14 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+const siteUrl = "https://weblite.az";
+const siteName = "Web Lite";
+const defaultTitle =
+  "Web Lite | Website Making, Web Design and SEO Optimization";
+const defaultDescription =
+  "Web Lite creates fast, modern and SEO optimized websites for businesses that need web design, website making, landing pages, e-commerce and technical support.";
+const previewImage = `${siteUrl}/weblite-logo.jpeg`;
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -81,31 +89,50 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "Web Lite - Modern Websites for Modern Businesses" },
+        { title: defaultTitle },
         {
           name: "description",
-          content:
-            "Web Lite builds fast, responsive websites for modern businesses.",
+          content: defaultDescription,
         },
-        { name: "author", content: "Web Lite" },
+        { name: "author", content: siteName },
+        {
+          name: "keywords",
+          content:
+            "Web Lite, weblite, web site, website making, website design, web design, web development, sayt hazirlanmasi, veb sayt hazirlanmasi, SEO optimization, landing page, e-commerce website",
+        },
+        { name: "robots", content: "index, follow" },
+        {
+          name: "googlebot",
+          content: "index, follow, max-image-preview:large",
+        },
+        { name: "theme-color", content: "#ef4444" },
         {
           property: "og:title",
-          content: "Web Lite - Modern Websites for Modern Businesses",
+          content: defaultTitle,
         },
         {
           property: "og:description",
-          content:
-            "Premium web design and development for ambitious modern brands.",
+          content: defaultDescription,
         },
         { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary" },
-        { name: "twitter:site", content: "@weblite" },
+        { property: "og:site_name", content: siteName },
+        { property: "og:url", content: siteUrl },
+        { property: "og:image", content: previewImage },
+        { property: "og:image:alt", content: "Web Lite logo" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: defaultTitle },
+        { name: "twitter:description", content: defaultDescription },
+        { name: "twitter:image", content: previewImage },
       ],
       links: [
         {
           rel: "stylesheet",
           href: appCss,
         },
+        { rel: "canonical", href: siteUrl },
+        { rel: "icon", href: "/weblite-logo-160.jpeg", type: "image/jpeg" },
+        { rel: "apple-touch-icon", href: "/weblite-logo-160.jpeg" },
+        { rel: "manifest", href: "/site.webmanifest" },
       ],
     }),
     shellComponent: RootShell,
